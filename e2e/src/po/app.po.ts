@@ -12,7 +12,15 @@ export class AppPage {
 
   async gotoPage(url) {
     await this.page.goto(this.baseUrl + url);
-    await this.page.screenshot({ path: 'example.png' });
+  }
+
+  async getContent(selector) {
+    return await this.page
+      .evaluate(select => document.querySelector(select).textContent, selector);
+  }
+
+  async waitFor(selector) {
+    return this.page.waitFor(selector);
   }
 
   close() {

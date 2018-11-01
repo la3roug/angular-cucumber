@@ -1,5 +1,5 @@
 Feature: Say hello to visitor
   Scenario: Display a welcome message
-    Given I am here
-    When you are here too
-    Then we should be here
+    Given a visitor visits our website
+    When the home page is loaded
+    Then he should see a message saying "Welcome Visitor !"

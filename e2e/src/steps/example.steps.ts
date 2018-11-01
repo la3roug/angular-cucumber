@@ -10,16 +10,16 @@ BeforeAll(async () => {
   await appPage.init();
 });
 
-Given('I am here', async () => {
+Given('a visitor visits our website', async () => {
   await appPage.gotoPage('/');
 });
 
-When('you are here too', () => {
-  console.log('yes you are');
+When('the home page is loaded', async () => {
+  await appPage.waitFor('h1');
 });
 
-Then('we should be here', () => {
-  expect(true).to.be.true;
+Then('he should see a message saying {string}', async message => {
+  expect(await appPage.getContent('h1')).to.equal(message);
 });
 
 AfterAll(() => {
