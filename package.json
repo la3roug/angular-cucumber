@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "TS_NODE_PROJECT=e2e/tsconfig.e2e.json cucumber-js --require-module ts-node/register -r e2e/steps/**/*.steps.ts e2e/features/**/*.feature"
+    "e2e": "TS_NODE_PROJECT=e2e/tsconfig.e2e.json cucumber-js --require-module ts-node/register -r e2e/src/steps/**/*.steps.ts e2e/src/features/**/*.feature"
   },
   "private": true,
   "dependencies": {
